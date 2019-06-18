@@ -2,12 +2,14 @@ package cse360assign2;
 
 public class AddingMachine {
 	private int total;
+	private String history;
 	 
 	/**
 	 * Constructor to initialize variables
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		history = total + " "; 	// initialize history with value of total
 	}
 	
 	/**
@@ -15,15 +17,17 @@ public class AddingMachine {
 	 * @return
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
-	 * Method to add value into total
+	 * Method to add value into total 
 	 * @param value
 	 */
 	public void add (int value) {
-		
+		total += value;
+		// add to history
+		history += "+ " + value + " ";
 	}
 	
 	/**
@@ -31,20 +35,25 @@ public class AddingMachine {
 	 * @param value
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
+		// add to history
+		history += "- " + value + " ";
 	}
 	
 	/**
-	 * Metho to get string representation of total variable
+	 * Method to get string representation of history of operations
 	 */
 	public String toString () {
-		return "";
+		return history;
 	}
 
 	/**
 	 * Method to clear all the variables values
 	 */
 	public void clear() {
-	
+		// reset value of total
+		total = 0;
+		// reset history to empty string
+		history = "";
 	}
 }
